@@ -1,0 +1,79 @@
+﻿<Window x:Class="Ordenacions.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ordenacions" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Ordenacions" Height="700" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" Orientation="Vertical" Margin="0,5,0,0">
+            <TextBlock Text="Número elements"/>
+            <xctk:IntegerUpDown Name="IntegNumeroElements" Minimum="5" Maximum="100" Width="69" Value="10" ValueChanged="IntegNumeroElements_ValueChanged"/>
+            <TextBlock Text="Gruix del marc"/>
+            <xctk:IntegerUpDown Name="IntegTamanyMarc" Minimum="2" Maximum="20" Width="69" Value="4"/>
+            <TextBlock Text="Radi Columnes"/>
+            <xctk:IntegerUpDown Name="IntegRadiColumnes" Minimum="0" Maximum="20" Width="69" Value="2"/>
+            <TextBlock Text="Temps Pausa"/>
+            <xctk:IntegerUpDown Name="IntegTempsPausa" Minimum="0" Maximum="100" Width="69" Value="30" ValueChanged="IntegTempsPausa_ValueChanged"/>
+            <CheckBox x:Name="CheckMarcaIntercaniv" Content="Marca Intercanvi" IsChecked="True"/>
+            <TextBlock Text="Tipus de Figures"/>
+            <ComboBox x:Name="ComboBoxTipusFigures">
+                <ComboBoxItem IsSelected="True" Content="Barres"/>
+                <ComboBoxItem Content="Punts"/>
+            </ComboBox>
+            <TextBlock Text="Tipus d'ordenació"/>
+            <ComboBox x:Name="ComboBoxTipusOrdenacio">
+                <ComboBoxItem IsSelected="True" Content="Inserció Directa"/>
+                <ComboBoxItem Content="Bombolla"/>
+                <ComboBoxItem Content="Sacsejada"/>
+                <ComboBoxItem Content="Shell"/>
+                    <ComboBoxItem Content="Quicksort"/>
+                </ComboBox>
+            <TextBlock Text="Disposició inicial"/>
+            <RadioButton x:Name="RadioButtonInvertit" GroupName="DisposicioInicial" Content="Invertit"/>
+            <RadioButton x:Name="RadioButtonAleatori" IsChecked="True"  GroupName="DisposicioInicial" Content="Aleatori"/>
+                <StackPanel Margin="1">
+                    <CheckBox x:Name="CheckMarcaAnimacioPosicio" Content="Marca animacio posició" IsChecked="True"/>
+                    <CheckBox x:Name="CheckMarcaAnimacioAlcada" Content="Marca animacio alçada" IsChecked="True" Margin="0,5"/>
+                    <TextBlock Text="Tipus animacio"/>
+                    <ComboBox x:Name="ComboBoxAnimacions" Margin="0,0,0,5" SelectionChanged="ComboBoxAnimacions_SelectionChanged">
+                        <ComboBoxItem IsSelected="True" Content="Cap"/>
+                        <ComboBoxItem Content="BackEase"/>
+                        <ComboBoxItem Content="ElasticEase"/>
+                        <ComboBoxItem Content="BounceEase"/>
+                        <ComboBoxItem Content="CircleEase"/>
+                        <ComboBoxItem Content="PowerEase"/>
+                    </ComboBox>
+                    <TextBlock Text="Easing Mode"/>
+                    <ComboBox x:Name="ComboBoxEasingMode">
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Margin="1">
+                    <TextBlock Text="Correcte"/>
+                    <xctk:ColorPicker x:Name="ColorCorrecte" BorderThickness="1" VerticalAlignment="top" DisplayColorAndName="True" SelectedColor="Green" SelectedColorChanged="ActualitzarPinzells"/>
+                    <TextBlock Text="Incorrecte"/>
+                    <xctk:ColorPicker x:Name="ColorIncorrecte" BorderThickness="1" VerticalAlignment="top" DisplayColorAndName="True" SelectedColor="Red" SelectedColorChanged="ActualitzarPinzells"/>
+                    <TextBlock Text="Intercaniv"/>
+                    <xctk:ColorPicker x:Name="ColorIntercaniv" BorderThickness="1" VerticalAlignment="top" DisplayColorAndName="True" SelectedColor="Yellow" SelectedColorChanged="ActualitzarPinzells"/>
+                    <TextBlock Text="Fons"/>
+                    <xctk:ColorPicker x:Name="ColorFons" BorderThickness="1" VerticalAlignment="top" DisplayColorAndName="True" SelectedColor="AliceBlue" SelectedColorChanged="ActualitzarPinzells"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Button x:Name="btOrdena" MinWidth="70" FontSize="16" Content="Ordena" Click="btOrdena_Click"/>
+                <Separator Margin="5"/>
+                <Button x:Name="btGenera" MinWidth="70" FontSize="16" Content="Genera" Click="btGenera_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+        <Viewbox Grid.Column="1">
+            <Canvas x:Name="CanvasGrafic" Height="100000" Width="100000">
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Window>

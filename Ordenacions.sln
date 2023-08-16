@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordenacions", "Ordenacions\Ordenacions.csproj", "{4556A355-A064-4EC1-94C7-1BB5DABF375C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4556A355-A064-4EC1-94C7-1BB5DABF375C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4556A355-A064-4EC1-94C7-1BB5DABF375C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4556A355-A064-4EC1-94C7-1BB5DABF375C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4556A355-A064-4EC1-94C7-1BB5DABF375C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B4A15FD-1CA1-4B7B-8D54-115A67B4F987}
+	EndGlobalSection
+EndGlobal
